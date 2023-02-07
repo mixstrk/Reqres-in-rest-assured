@@ -1,0 +1,81 @@
+Method is GET
+
+Test 1 - get list user
+
+1. Get list of users on the page 2
+2. Check that status-code is 200
+3. Check that page equal to 2 and fields NotNULL
+4. Check that email of users have end with "@reqres.in"
+5. Check that avatars of users have end with ".jpg"
+6. Check that first_name less than 50 symbols
+7. Check that last_name less than 50 symbols
+
+Test 2 - get single user with valid id
+
+1. Get single user with valid id
+2. Check that status-code is 200
+3. Check that got id equal to request id
+4. Check that email of user has end with "@reqres.in"
+5. Check that first_name and last_name are NotNULL
+6. Check that avatar of user has end with ".jpg"
+
+Test 3 - single user is not found
+
+1. Get request for single user with invalid id
+2. Check that status-code is 404
+3. Check that body is null (is {} )
+
+Test 4 - get list color
+
+1. Get list resource on the page 1
+2. Check that status-code is 200
+3. Check that page equal to 1 and fields NotNULL
+4. Check that name less than 50 symbols
+5. Check that year contains 4 symbols and less than 2023
+6. Check that color begins with # and contains 7 symbols
+
+
+Method is POST
+
+Test 1 - create user
+
+1. Create new user
+2. Check that status-code is 201
+3. Check that response is not null
+4. Check that user name equal to set name
+5. Check that user job equal to set job
+6. Check that id is not null and greater or equal to 0
+7. Check that created time equal to current time
+
+Test 2 - register successful
+
+1. Register user with valid email and password 
+2. Check that status-code is 200
+3. Check that response is not null
+4. Check that id is equal to 4
+5. Check that token is equal to "QpwL5tke4Pnpja7X4"
+
+Test 3 - register unsuccessful
+
+1. Register user with only email
+2. Check that status-code is 400
+3. Check that response is not null
+4. Check that got error is "Missing password"
+
+
+Method is PUT
+
+Test 1 - Update job
+
+1. Replace job
+c
+3. Check that response is not null
+4. Check that user job equal to set job
+
+
+Method is DELETE
+
+Test 1 - delete user
+
+1. Delete user
+2. Check that status-code is 204
